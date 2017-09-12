@@ -89,10 +89,10 @@ export class HomePage {
 
               let timeStamp: Object = firebase.database.ServerValue.TIMESTAMP;
 
-              let chat1 = new Chat('', timeStamp, user.name, '');
+              let chat1 = new Chat('', timeStamp, user.name, (user.photo || ''));
               this.chatProvider.create(chat1, currentUser.$key, user.$key);
 
-              let chat2 = new Chat('', timeStamp, currentUser.name, '');
+              let chat2 = new Chat('', timeStamp, currentUser.name, (currentUser.photo || ''));
               this.chatProvider.create(chat2, user.$key, currentUser.$key);
 
             }
